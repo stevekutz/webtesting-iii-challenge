@@ -35,6 +35,23 @@ Follow these steps to setup your git _fork_ and _branch_.
 - [ ] Commit changes to your `<firstName-lastName>` branch.
 - [ ] Push often to your branch: `git push origin <firstName-lastName>`.
 
+## Updates to Proejct Setup
+warning react-testing-library@6.1.2: 🚨  react-testing-library has moved to @testing-library/react. Please uninstall react-testing-library and install @testing-library/react instead, or use an older version of react-testing-library. Learn more about this change here: https://github.com/testing-library/dom-testing-library/issues/260 Thanks! :)
+
+warning react-testing-library > dom-testing-library@3.19.4: 🚨  dom-testing-library has moved to @testing-library/dom. Please uninstall dom-testing-library and install @testing-library/dom instead, or use an older version of dom-testing-library. Learn more about this change here: https://github.com/testing-library/dom-testing-library/issues/260 Thanks! :)
+### Uninstall legacy dependencies
+- `yarn  remove react-testing-library`
+- `yarn remove dom-testing-library`
+## Install Updated dependencies (as dev dependencies)
+- `yarn add @testing-library/react --dev`
+- `yarn add  @testing-library/dom`
+
+## Inside of your test file:
+- `import * as rtl from '@testing-library/react';`
+- `import '@testing-library/jest-dom/extend-expect';`
+#### Use the following to run new test DOM for each test
+ - `afterEach(rtl.cleanup);`
+
 Follow these steps for completing your project.
 
 - [ ] Submit a Pull-Request to merge the `<firstName-lastName>` branch into the master branch on your fork. **Please don't merge your own pull request**
