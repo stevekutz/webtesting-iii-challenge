@@ -39,18 +39,24 @@ Follow these steps to setup your git _fork_ and _branch_.
 warning react-testing-library@6.1.2: 🚨  react-testing-library has moved to @testing-library/react. Please uninstall react-testing-library and install @testing-library/react instead, or use an older version of react-testing-library. Learn more about this change here: https://github.com/testing-library/dom-testing-library/issues/260 Thanks! :)
 
 warning react-testing-library > dom-testing-library@3.19.4: 🚨  dom-testing-library has moved to @testing-library/dom. Please uninstall dom-testing-library and install @testing-library/dom instead, or use an older version of dom-testing-library. Learn more about this change here: https://github.com/testing-library/dom-testing-library/issues/260 Thanks! :)
+
+jest-dom has moved to @testing-library/jest-dom. Please uninstall jest-dom and install @testing-library/jest-dom instead, or use an older version of jest-dom. Learn more about this change here: https://github.com/testing-library/dom-testing-library/issues/260 Thanks! :)
+
+
 ### Uninstall legacy dependencies
 - `yarn  remove react-testing-library`
 - `yarn remove dom-testing-library`
 ## Install Updated dependencies (as dev dependencies)
 - `yarn add @testing-library/react --dev`
 - `yarn add  @testing-library/dom`
+= `yarn add jest-dom --dev`
 
 ## Inside of your test file:
 - `import * as rtl from '@testing-library/react';`
 - `import '@testing-library/jest-dom/extend-expect';`
-#### Use the following to run new test DOM for each test
+#### Use one the following to run new test DOM for each test
  - `afterEach(rtl.cleanup);`
+ - `import "@testing-library/react/cleanup-after-each"`
 
 Follow these steps for completing your project.
 

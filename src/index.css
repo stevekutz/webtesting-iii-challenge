@@ -44,4 +44,5 @@ body {
   padding: 4px 8px;
   font-size: 1rem;
   font-weight: 300;
+  outline-style: none;
 }
