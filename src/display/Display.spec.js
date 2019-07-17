@@ -18,22 +18,30 @@ describe(`<Display/> tests`, () => {
         expect(tree).toMatchSnapshot();
     })
 
-    it(`3) Original state is locked=false & closed false `, () => {
+    it(`3) Original state is locked=false & closed=false `, () => {
         const {getByText, queryByText} = render(<Display  locked = {false} closed = {false} />);
         expect(getByText(/Open/)).toBeInTheDocument();
         expect(queryByText(/Unlocked/)).toBeInTheDocument();
     })
 
-    it(`4) Closed Gate-Unlocked is locked=false & closed true`, () => {
+    it(`4) Closed Gate-Unlocked is locked=false & closed=true`, () => {
         const {getByText, queryByText} = render(<Display  locked = {false} closed = {true} />);
         expect(getByText(/Closed/)).toBeInTheDocument();
         expect(queryByText(/Unlocked/)).toBeInTheDocument();
     })
 
-    it(`4) Closed Gate-Locked is locked=true & closed true`, () => {
+    it(`5) Closed Gate-Locked is locked=true & closed=true`, () => {
         const {getByText, queryByText} = render(<Display  locked = {true} closed = {true} />);
         expect(getByText(/Closed/)).toBeInTheDocument();
         expect(queryByText(/Locked/)).toBeInTheDocument();
     })
-    
+    /*
+    it(`6) SHOULD FAIL Closed Gate-Open should NEVER exist is locked=true & closed false`, () => {
+        const {getByText, queryByText} = render(<Display  locked = {true} closed = {false} />);
+        expect(queryByText(/Open/)).not.toBeInTheDocument();  // User should NEVER be able to  get this state
+        expect(qetByText(/Locked/)).toBeInTheDocument();
+    })
+    */
+
+
 }) 
