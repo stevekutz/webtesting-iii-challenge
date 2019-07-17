@@ -19,8 +19,7 @@ describe(`<Controls/> tests`, () => {
         expect(tree).toMatchSnapshot();
     })
 
-       
-      ///  
+    
 
     
 })
